@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container">
+    <section class="section-header" >
+      <div id="time">
+        <span id="date"></span>
+        
+      </div>
+       <div class="scores">
+        <h3>Highest Score: <span id="highest-score"></span></h3>
+        <h3>Your Score: <span id="current-score">0</span></h3>
+      </div>
+      <div class="title">
+        <p>Hangman</p>
+      </div>
+      <div class="nav">
+        <ul>
+          <li id="help-box" onmouseenter="displayHelp()" onmouseleave="removeHelp()"> Help</li>
+        </ul>
+        
+      </div>
+      <div class="clear"></div>
+      <div id="modal" style="display: none;">
+        <div class="content">
+             <span id="cross">x</span>
+            <p id="result"> <span id="reaction"></span><br> <span id="remarks"></span></p>
+
+        <button class="closebtn">Ok</button>
+        </div>
+        
+      </div>
+      <div class="help" style='display: none;' >
+        <ul>
+          <li>You can press keys between a to z in upper or lower case</li>
+          <li>Look for hint inside cloud image and press letter accordingly</li>
+          <li>Repeating same letter you typed wont be considered an error</li>
+          <li>In each word guess you will recive an current-score</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="game">
+      <div class="hangman">
+      <svg>
+      <rect x="125" y="500" width="100" height="5" fill="white" />
+      <rect x="170" y="200" width="5" height="300" fill="white" />
+      <rect x="170" y="200" width="50" height="5" fill="white" />
+      <rect x="220" y="200" width="5" height="45" fill="white" />
+       <circle  id="head" r="23" cx="225" cy="265" stroke="white" stroke-width="4", fill="none"style="display: none;"/>
+       <rect id="body" x="223" y="288" width="4" height="60" fill="white" style="display: none;"/>
+       <line id="lhand" x1="224" y1="315" x2="190" y2="300" stroke="white" stroke-width="4" style="display: none;"/>
+       <line id="rhand" x1="224" y1="315" x2="258" y2="300" stroke="white" stroke-width="4" style="display: none;"/>
+       <line id="lleg" x1="224" y1="346" x2="190" y2="370" stroke="white" stroke-width="4" style="display: none;"/>
+       <line id="rleg" x1="224" y1="346" x2="253" y2="370" stroke="white" stroke-width="4" style="display: none;"/> -->
+        
+  </svg>
+
+      </div>
+  
+       <div class="guess">
+         <p id="category"></p>
+         <img src="./cloud.png" alt="hint">
+        <p id="hint"></p>
+        <p id="error"> </p>
+
+        <p id="text">
+            
+        </p>
+
+        <div class="buttons">
+          <ul>
+            <li> <a href="#" onclick="tryAgain()" class="btn" >Try Again</a></li>
+            <li><a href="#" class="btn" onclick="newGame()">New Game</a></li>
+          </ul>
+        </div>
+       </div>
+
+       <div class="results">
+         
+       </div>
+    </section>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
