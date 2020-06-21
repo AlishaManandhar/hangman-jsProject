@@ -248,7 +248,6 @@ function numberSelection() {
 function displayResult(react, result) {
     document.getElementById("reaction").innerHTML = react;
     document.getElementById("remarks").innerHTML = result;
-    realWord = [];
 }
 
 //Displaying guidelines when hovered on Help
